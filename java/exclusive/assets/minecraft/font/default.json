@@ -1,0 +1,58 @@
+{
+    "providers": [
+        {
+            "file": "vaojincraft:ui/logo.png",
+            "chars": [
+                ""
+            ],
+            "height": 90,
+            "ascent": 45,
+            "type": "bitmap"
+        },
+        {
+            "file": "vaojincraft:ui/ranks/owner.png",
+            "chars": [
+                ""
+            ],
+            "height": 9,
+            "ascent": 8,
+            "type": "bitmap"
+        },
+        {
+            "file": "vaojincraft:ui/ranks/admin.png",
+            "chars": [
+                ""
+            ],
+            "height": 9,
+            "ascent": 8,
+            "type": "bitmap"
+        },
+        {
+            "file": "vaojincraft:ui/ranks/mod.png",
+            "chars": [
+                ""
+            ],
+            "height": 9,
+            "ascent": 8,
+            "type": "bitmap"
+        },
+        {
+            "file": "vaojincraft:ui/ranks/member.png",
+            "chars": [
+                ""
+            ],
+            "height": 9,
+            "ascent": 8,
+            "type": "bitmap"
+        },
+        {
+            "file": "vaojincraft:ui/logo.png",
+            "chars": [
+                ""
+            ],
+            "height": 70,
+            "ascent": 35,
+            "type": "bitmap"
+        }
+    ]
+}

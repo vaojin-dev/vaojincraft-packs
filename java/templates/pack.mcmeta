@@ -1,0 +1,16 @@
+{
+  "pack": {
+    "description": [
+      { "text": "Vaojin", "color": "#65A1C7", "bold": false },
+      { "text": "Craft", "color": "#DB6A2E", "bold": false },
+
+      { "text": " | ", "color": "dark_gray", "bold": false },
+      { "text": "Global Pack\n", "color": "gray", "bold": false },
+
+      { "text": "IP: ", "color": "gray", "bold": false},
+      { "text": "play.vaojin.com", "color": "white", "bold": false}
+    ],
+    "min_format": 75,
+    "max_format": 84
+  }
+}

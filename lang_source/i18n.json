@@ -1,0 +1,21 @@
+{
+    "global": {
+        "music.smoki_day": "AI - Smoki's Big Day",
+        "music.grubertaler_tirol": "Die Grubertaler - Dem Land Tirol die Treue",
+        "music.figa": "Viva la FIGA - Betobahia - inno dell'amore",
+        "music.beppo": "Beppo Del Trentin - Sepp Messner Windschnur",
+        "logo": ""
+    },
+    "localized": {
+        "return": {
+            "en_us": "Back to VaojinCraft!",
+            "it_it": "Ritorna su VaojinCraft!",
+            "de_de": "Zurück zu VaojinCraft!"
+        },
+        "quit": {
+            "en_us": "You're leaving us?",
+            "it_it": "Vuoi già andartene?",
+            "de_de": "Verlässt du uns schon?"
+        }
+    }
+}

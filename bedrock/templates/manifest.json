@@ -1,0 +1,29 @@
+{
+    "format_version": 2,
+    "header": {
+        "name": "VaojinCraft",
+        "description": "§bVaojin§6Craft §8| §7Global Pack\n§7IP: §fplay.vaojin.com",
+        "uuid": "a503c248-00be-4f1a-bebb-1dd5940d522c",
+        "version": [
+            1,
+            1,
+            0
+        ],
+        "min_engine_version": [
+            1,
+            21,
+            0
+        ]
+    },
+    "modules": [
+        {
+            "type": "resources",
+            "uuid": "f446a9f9-568e-4d61-a1ce-02c1216e5af6",
+            "version": [
+                1,
+                1,
+                0
+            ]
+        }
+    ]
+}

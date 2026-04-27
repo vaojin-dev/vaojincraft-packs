@@ -1,0 +1,15 @@
+{
+    "item.minecraft.music_disc_mellohi.desc": "{{global.music.smoki_day}}",
+    "jukebox_song.minecraft.mellohi": "{{global.music.smoki_day}}",
+    "item.minecraft.music_disc_13.desc": "{{global.music.grubertaler_tirol}}",
+    "jukebox_song.minecraft.13": "{{global.music.grubertaler_tirol}}",
+    "item.minecraft.music_disc_precipice.desc": "{{global.music.figa}}",
+    "jukebox_song.minecraft.precipice": "{{global.music.figa}}",
+    "item.minecraft.music_disc_cat.desc": "{{global.music.beppo}}",
+    "jukebox_song.minecraft.cat": "{{global.music.beppo}}",
+    "menu.game": "{{global.logo}}",
+    //"painting.arts.river.author": "ansimuz",
+    //"painting.arts.river.title": "River",
+    "menu.returnToGame": "{{localized.return}}",
+    "menu.disconnect": "{{localized.quit}}"
+}

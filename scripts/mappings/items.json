@@ -1,0 +1,9 @@
+{
+    "files": {
+        "pack.png": "pack_icon.png"
+    },
+    "directories": {
+        "assets/minecraft/sounds/records/": "sounds/music/game/records/",
+        "assets/minecraft/textures/item/": "textures/items/"
+    }
+}

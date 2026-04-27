@@ -1,0 +1,7 @@
+item.record_13.desc={{global.music.grubertaler_tirol}}
+item.record_cat.desc={{global.music.beppo}}
+item.record_mellohi.desc={{global.music.smoki_day}}
+item.record_precipice.desc={{global.music.figa}}
+
+menu.returnToGame={{localized.return}}
+pauseScreen.quit={{localized.quit}}

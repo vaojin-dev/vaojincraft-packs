@@ -1,0 +1,85 @@
+name: Build
+
+on:
+  push:
+    branches: ["main"]
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: "pip"
+
+      - name: Install Python dependencies
+        run: pip install -r requirements.txt
+
+      - name: Build Resource Packs
+        run: python scripts/build.py
+
+      - name: Generate SHA1 for Java Pack
+        run: |
+          cd dist
+          for file in *.zip; do
+            sha1sum "$file" | awk '{print $1}' > "${file}.sha1"
+          done
+
+      # dev-build (Runs only on main branch pushes)
+
+      - name: Delete previous dev-build tag & release
+        if: github.ref == 'refs/heads/main'
+        run: |
+          gh release delete dev-build --yes --cleanup-tag || true
+          git push origin :refs/tags/dev-build || true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Get Git short SHA
+        if: github.ref == 'refs/heads/main'
+        id: git-version
+        run: echo "id=$(git rev-parse --short HEAD)" >> $GITHUB_OUTPUT
+
+      - name: Create dev-build Pre-release
+        if: github.ref == 'refs/heads/main'
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: dev-build
+          name: Dev-build ${{ steps.git-version.outputs.id }}
+          files: dist/*
+          prerelease: true
+          generate_release_notes: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # versioned release (Runs only on tag pushes)
+
+      - name: Check if tag is Pre-release
+        if: startsWith(github.ref, 'refs/tags/')
+        id: prerelease_check
+        run: |
+          if [[ "${{ github.ref }}" == *"-"* ]]; then
+            echo "IS_PRERELEASE=true" >> $GITHUB_ENV
+          else
+            echo "IS_PRERELEASE=false" >> $GITHUB_ENV
+          fi
+
+      - name: Create GitHub Release
+        if: startsWith(github.ref, 'refs/tags/')
+        uses: softprops/action-gh-release@v2
+        with:
+          files: dist/*
+          prerelease: ${{ env.IS_PRERELEASE == 'true' }}
+          generate_release_notes: false
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

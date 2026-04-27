@@ -1,0 +1,9 @@
+{
+    "resource_pack_name": "VaojinCraft",
+    "texture_name": "atlas.items",
+    "texture_data": {
+        "snowman_globe": {
+            "textures": "textures/items/snowman_globe"
+        }
+    }
+}

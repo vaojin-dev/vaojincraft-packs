@@ -1,0 +1,175 @@
+{
+    "namespace": "pause",
+    "menu_background@pause.transparent_background": {
+        "size": [
+            "100% - 2px",
+            "100%c + 8px"
+        ],
+        "alpha": 0,
+        "layer": 1,
+        "anchor_from": "center",
+        "anchor_to": "center",
+        "offset": [
+            "13%",
+            "0%"
+        ],
+        "controls": [
+            {
+                "button_panel": {
+                    "type": "stack_panel",
+                    "size": [
+                        "100% - 8px",
+                        "100%c"
+                    ],
+                    "anchor_from": "center",
+                    "anchor_to": "center",
+                    "controls": [
+                        {
+                            "title_image": {
+                                "type": "panel",
+                                "anchor_from": "top_middle",
+                                "anchor_to": "top_middle",
+                                "size": [
+                                    "100%",
+                                    "55%x"
+                                ],
+                                "controls": [
+                                    {
+                                        "custom_pause_logo": {
+                                            "type": "image",
+                                            "texture": "textures/ui/logo",
+                                            "layer": 1,
+                                            "size": [
+                                                "100%",
+                                                "100%"
+                                            ]
+                                        }
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "fill_1": {
+                                "type": "panel",
+                                "layer": 1,
+                                "size": [
+                                    "fill",
+                                    4
+                                ]
+                            }
+                        },
+                        {
+                            "return_to_game_button@pause.return_to_game_button": {}
+                        },
+                        {
+                            "return@pause.vertical_padding": {
+                                "size": [
+                                    0,
+                                    3
+                                ]
+                            }
+                        },
+                        {
+                            "settings_button@pause.settings_button": {
+                                "ignored": "$pause_menu_icon_settings_layout"
+                            }
+                        },
+                        {
+                            "settings@pause.vertical_padding": {
+                                "size": [
+                                    0,
+                                    3
+                                ],
+                                "ignored": "$pause_menu_icon_settings_layout"
+                            }
+                        },
+                        {
+                            "feedback_button_primary_panel@pause.feedback_button_primary_panel": {}
+                        },
+                        {
+                            "feedback@pause.vertical_padding": {
+                                "size": [
+                                    0,
+                                    3
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#feedback_button_visible",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "realms_stories_button_panel@pause.realms_stories_button_panel": {}
+                        },
+                        {
+                            "realms_stories@pause.vertical_padding": {
+                                "size": [
+                                    0,
+                                    3
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#realms_stories_button_primary_visible",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "buy_button@pause.buy_button": {}
+                        },
+                        {
+                            "buy@pause.vertical_padding": {
+                                "size": [
+                                    0,
+                                    3
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "#is_trial_version",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "store_button_panel@pause.store_button_panel": {}
+                        },
+                        {
+                            "store_button_panel_padding@pause.vertical_padding": {
+                                "ignored": "$is_secondary_client",
+                                "size": [
+                                    0,
+                                    3
+                                ],
+                                "bindings": [
+                                    {
+                                        "binding_name": "(not #store_button_secondary_visible)",
+                                        "binding_name_override": "#visible",
+                                        "binding_type": "global"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "quit_button@pause.quit_button": {}
+                        },
+                        {
+                            "smaller_buttons@pause.smaller_buttons_panel": {}
+                        },
+                        {
+                            "pause_panel@pause.pause_announcement_panel_green": {
+                                "ignored": "(not $pause_menu_icon_settings_layout)"
+                            }
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}

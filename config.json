@@ -1,0 +1,26 @@
+{
+    "pack_version": "1.0.0",
+    "global_excludes": [
+        "LICENSE",
+        "mojang.md"
+    ],
+    "java": {
+        "min_format": 75,
+        "max_format": 84,
+        "assets_version": "1.21.11"
+    },
+    "bedrock": {
+        "min_engine_version": [
+            1,
+            21,
+            0
+        ],
+        "samples_version": "main",
+        "header_uuid": "a503c248-00be-4f1a-bebb-1dd5940d522c",
+        "module_uuid": "f446a9f9-568e-4d61-a1ce-02c1216e5af6"
+    },
+    "dependencies": {
+        "java": [],
+        "bedrock": []
+    }
+}

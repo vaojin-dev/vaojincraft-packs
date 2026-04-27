@@ -1,0 +1,5 @@
+repos:
+  - repo: git@github.com:vaojin-dev/git-hooks.git
+    rev: 7e6f52663777bc4b7fe410c28c669148ee5961bf
+    hooks:
+      - id: uv-pip-compile
