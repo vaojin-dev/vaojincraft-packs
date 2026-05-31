@@ -8,6 +8,7 @@
     "item.minecraft.music_disc_cat.desc": "{{global.music.beppo}}",
     "jukebox_song.minecraft.cat": "{{global.music.beppo}}",
     "menu.game": "{{global.logo}}",
+    "item.minecraft.suspicious_stew": "{{global.item.suspicious_stew}}",
     //"painting.arts.river.author": "ansimuz",
     //"painting.arts.river.title": "River",
     "menu.returnToGame": "{{localized.return}}",
