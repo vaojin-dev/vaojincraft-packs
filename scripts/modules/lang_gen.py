@@ -45,7 +45,7 @@ def run(config, paths):
     print("--- Running Language Generator ---")
     
     java_version = config.get("java", {}).get("assets_version", "26.1.2")
-    bedrock_version = config.get("bedrock", {}).get("samples_version", "main")
+    bedrock_version = config.get("bedrock", {}).get("assets_version", "main")
     
     java_url = f"https://api.github.com/repos/InventivetalentDev/minecraft-assets/contents/assets/minecraft/lang?ref={java_version}"
     bedrock_url = f"https://raw.githubusercontent.com/Mojang/bedrock-samples/{bedrock_version}/resource_pack/texts/languages.json"
