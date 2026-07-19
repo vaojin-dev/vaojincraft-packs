@@ -46,9 +46,18 @@
             "type": "bitmap"
         },
         {
-            "file": "vaojincraft:ui/transitions/black.png",
+            "file": "vaojincraft:ui/logo.png",
             "chars": [
                 "\uF005"
+            ],
+            "height": 70,
+            "ascent": 35,
+            "type": "bitmap"
+        },
+        {
+            "file": "vaojincraft:ui/transitions/black.png",
+            "chars": [
+                "\uF006"
             ],
             "height": 1024,
             "ascent": 512,
