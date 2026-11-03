@@ -20,7 +20,7 @@
         "module_uuid": "f446a9f9-568e-4d61-a1ce-02c1216e5af6"
     },
     "dependencies": {
-        "java": [],
-        "bedrock": []
+        "java": ["https://cdn.modrinth.com/data/4he19j3A/versions/noqaGJTQ/Y%27all%2C%20It%27s%20Winter%21%20-%20v3.1.0.zip"],
+        "bedrock": ["https://download1478.mediafire.com/cet0ibv6n0dg1VpO84bsnd31NyXk8Urq3EbwsjhNgKbG55dzASQ5q554K6K8irUU_aKjVQ5Vk4aggC140wSNyl7KcoYdejFuH96amJfaTyNhxyv7ykqDysuVAdI5ty8xBmRyylpr_e0tzyiTsAvmaOL8aV5zmljqbVU4wcCDx7tupQ/kmvuoox9gjnuebm/Y%5C%27all%2C+It%5C%27s+Winter%21+-+v3.1.0.mcpack"]
     }
 }
