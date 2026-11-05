@@ -1,0 +1,14 @@
+{
+  "ambient.basalt_deltas.additions": {
+    "replace": true,
+    "sounds": []
+  },
+  "ambient.basalt_deltas.loop": {
+    "replace": true,
+    "sounds": []
+  },
+  "ambient.basalt_deltas.mood": {
+    "replace": true,
+    "sounds": []
+  }
+}
