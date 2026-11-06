@@ -1,18 +1,24 @@
 import os
+
+from core.file_utils import ensure_dir, load_json
 from PIL import Image
-from core.file_utils import load_json, ensure_dir
+
 
 def run(config, paths):
     print("--- Running Bedrock Glyph Generator ---")
-    
-    json_path = os.path.join(paths["java_exclusive"], "assets", "minecraft", "font", "default.json")
+
+    json_path = os.path.join(
+        paths["java_exclusive"], "assets", "minecraft", "font", "default.json"
+    )
     source_assets_dir = os.path.join(paths["commons_dir"], "assets")
     output_dir = os.path.join(paths["bedrock_dist"], "font")
-    
+
     try:
         data = load_json(json_path)
     except FileNotFoundError:
-        print(f"Warning: Java font config not found at {json_path}. Skipping glyph generation.")
+        print(
+            f"Warning: Java font config not found at {json_path}. Skipping glyph generation."
+        )
         return
 
     glyph_sheets = {}
@@ -26,7 +32,9 @@ def run(config, paths):
             namespace, rel_path = raw_path.split(":", 1)
             file_path = os.path.join(source_assets_dir, namespace, "textures", rel_path)
         else:
-            file_path = os.path.join(source_assets_dir, "minecraft", "textures", raw_path)
+            file_path = os.path.join(
+                source_assets_dir, "minecraft", "textures", raw_path
+            )
 
         for char_string in provider.get("chars", []):
             for char in char_string:
@@ -39,11 +47,13 @@ def run(config, paths):
                 if prefix not in glyph_sheets:
                     glyph_sheets[prefix] = []
 
-                glyph_sheets[prefix].append({
-                    "path": file_path.replace("/", os.sep).replace("\\", os.sep),
-                    "position": position,
-                    "char_hex": hex_str
-                })
+                glyph_sheets[prefix].append(
+                    {
+                        "path": file_path.replace("/", os.sep).replace("\\", os.sep),
+                        "position": position,
+                        "char_hex": hex_str,
+                    }
+                )
 
     sheet_size = 2048
     grid_columns = 16
@@ -63,7 +73,7 @@ def run(config, paths):
                 sprite = Image.open(item["path"]).convert("RGBA")
                 row = item["position"] // grid_columns
                 col = item["position"] % grid_columns
-                
+
                 if sprite.width > cell_size or sprite.height > cell_size:
                     sprite.thumbnail((cell_size, cell_size), Image.Resampling.LANCZOS)
 
@@ -77,5 +87,5 @@ def run(config, paths):
         output_file = os.path.join(output_dir, f"glyph_{prefix}.png")
         sheet_img.save(output_file)
         print(f"Successfully generated: {output_file}")
-        
+
     print("Glyph generation completed.\n")

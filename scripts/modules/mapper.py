@@ -1,10 +1,12 @@
 import os
 import shutil
-from core.file_utils import load_json, ensure_dir
+
+from core.file_utils import ensure_dir, load_json
+
 
 def _load_all_mappings(mappings_dir):
     combined_mapping = {"files": {}, "directories": {}}
-    
+
     if not os.path.exists(mappings_dir):
         print(f"Warning: Mappings directory not found at {mappings_dir}.")
         return combined_mapping
@@ -15,14 +17,16 @@ def _load_all_mappings(mappings_dir):
             data = load_json(filepath)
             combined_mapping["files"].update(data.get("files", {}))
             combined_mapping["directories"].update(data.get("directories", {}))
-                
+
     return combined_mapping
+
 
 def _is_excluded(filename, excludes_list):
     for ext in excludes_list:
         if filename.endswith(ext):
             return True
     return False
+
 
 def _resolve_bedrock_path(source_rel_path, mapping_config):
     files_mapping = mapping_config.get("files", {})
@@ -37,25 +41,29 @@ def _resolve_bedrock_path(source_rel_path, mapping_config):
 
     return None
 
+
 def _copy_exclusive_files(exclusive_dir, target_dir, platform_name):
     if os.path.exists(exclusive_dir):
         # dirs_exist_ok=True allows merging into an existing directory
         shutil.copytree(exclusive_dir, target_dir, dirs_exist_ok=True)
         print(f"Copied {platform_name} exclusive files.")
     else:
-        print(f"Notice: No exclusive folder found for {platform_name} at {exclusive_dir}")
+        print(
+            f"Notice: No exclusive folder found for {platform_name} at {exclusive_dir}"
+        )
+
 
 def run(config, paths):
     print("--- Running Static Assets Mapper ---")
-    
+
     _copy_exclusive_files(paths["java_exclusive"], paths["java_dist"], "Java")
     _copy_exclusive_files(paths["bedrock_exclusive"], paths["bedrock_dist"], "Bedrock")
-    
+
     commons_dir = paths["commons_dir"]
     java_dist = paths["java_dist"]
     bedrock_dist = paths["bedrock_dist"]
     mappings_dir = paths["mappings_dir"]
-    
+
     excludes = config.get("global_excludes", [])
     mappings = _load_all_mappings(mappings_dir)
 
@@ -67,9 +75,11 @@ def run(config, paths):
         for file in files:
             if _is_excluded(file, excludes):
                 continue
-                
+
             absolute_source_path = os.path.join(root, file)
-            rel_path = os.path.relpath(absolute_source_path, commons_dir).replace("\\", "/")
+            rel_path = os.path.relpath(absolute_source_path, commons_dir).replace(
+                "\\", "/"
+            )
 
             java_target_path = os.path.join(java_dist, rel_path)
             ensure_dir(os.path.dirname(java_target_path))
